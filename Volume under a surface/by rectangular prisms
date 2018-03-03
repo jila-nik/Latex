@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{math}
+\begin{document}
+
+\begin{tikzpicture}[scale=0.4]
+
+
+\draw [line width=2.pt,->] (0.,2)-- (-2-10,0.-10)node[left]{$\large x$};
+\draw [line width=2.pt,->] (0.,2.)-- (3.+23,1.-8)node[right]{$y$};
+\draw [line width=2.pt,->] (0.,2.)-- (0.,5.+15)node[above]{$z$};
+\foreach \j in {0,0.5,...,7}
+{
+    \foreach \i in {0,1,...,10}
+    {
+
+    \tikzmath{\k=(2*(5-0.5*\i)^0.5+(7-\j)^2*0.1);} % enter your function in here.
+    
+    \draw [line width=2.pt,color=pink,fill=yellow,fill opacity=0.8] (-1.-\i+3*\j,1.-\i-\j)--(0-\i+3*\j,2-\i-1*\j)--(1.5-\i+3*\j,1.5-\i-1*\j)-- (0.5-\i+3*\j,0.5-\i-1*\j)--cycle;
+
+    \draw [line width=2.pt,color=red,fill=pink,fill opacity=0.8] (-1.-\i+3*\j,1.-\i-\j+\k)--(0-\i+3*\j,2-\i-1*\j+\k)--(1.5-\i+3*\j,1.5-\i-1*\j+\k)-- (0.5-\i+3*\j,0.5-\i-1*\j+\k)--cycle;
+
+
+    \draw [line width=2.pt,color=orange,fill=yellow,fill opacity=0.5](-1.-\i+3*\j,1.-\i-\j+\k)-- (-1.-\i+3*\j,1.-\i-\j)--(.5-\i+3*\j,0.5-\i-1*\j)--(.5-\i+3*\j,0.5-\i-1*\j+\k)--cycle;
+
+    \draw [line width=2.pt,color=orange,fill=yellow,fill opacity=0.2](1.5-\i+3*\j,1.5-\i-1*\j+\k)-- (1.5-\i+3*\j,1.5-\i-1*\j)-- (0.5-\i+3*\j,0.5-\i-1*\j)--(0.5-\i+3*\j,0.5-\i-1*\j+\k);
+    }
+}
+\end{tikzpicture}
+\end{document}
+
